@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TOKEN HOSTING — Free Edition</title>
+<style>
+:root{--bg:#0b1020;--panel:#131b2e;--panel2:#18233a;--line:#263550;--text:#edf3ff;--muted:#91a2bd;--green:#37d69a;--blue:#70a7ff;--red:#ff6b78}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 15% 0%,#17294a 0,transparent 34%),var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial}
+button,input{font:inherit}.app{max-width:1180px;margin:auto;padding:22px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}.brand{display:flex;align-items:center;gap:12px}.logo{width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,#2b8cff,#30d69a);display:grid;place-items:center;font-weight:900;color:#071321}.brand h1{font-size:18px;margin:0;letter-spacing:.08em}.brand small{color:var(--muted)}.pill{border:1px solid #315c50;background:#102b28;color:#80f0c3;border-radius:99px;padding:6px 11px;font-size:12px}
+.layout{display:grid;grid-template-columns:220px 1fr;gap:18px}.side,.card{background:rgba(19,27,46,.94);border:1px solid var(--line);border-radius:16px}.side{padding:14px;height:max-content}.nav{display:block;width:100%;text-align:left;border:0;background:transparent;color:var(--muted);padding:11px 12px;border-radius:10px;margin:3px 0;cursor:pointer}.nav.active,.nav:hover{background:var(--panel2);color:var(--text)}.nav span{margin-right:9px}.side-note{border-top:1px solid var(--line);margin-top:14px;padding:13px 8px 2px;color:var(--muted);font-size:12px}
+main{min-width:0}.heading{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin:2px 0 18px}.heading h2{margin:0;font-size:25px}.muted{color:var(--muted)}.demo{font-size:12px;color:#ffd58a;background:#392b16;border:1px solid #765322;padding:6px 10px;border-radius:9px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px}.card{padding:16px}.stat-label{color:var(--muted);font-size:12px}.stat-value{font-size:22px;font-weight:750;margin-top:5px}.stat-sub{font-size:11px;color:var(--muted);margin-top:2px}
+.server{display:flex;align-items:center;justify-content:space-between;gap:15px}.server h3{margin:0 0 4px;font-size:18px}.status{display:inline-flex;align-items:center;gap:7px;color:var(--green);font-size:12px}.dot{width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block}.actions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid var(--line);background:#1b2942;color:var(--text);border-radius:9px;padding:9px 13px;cursor:pointer}.btn:hover{filter:brightness(1.18)}.btn.primary{background:#176a52;border-color:#258d6d}.btn.danger{background:#49232e;border-color:#793542}.btn:disabled{opacity:.4;cursor:not-allowed}
+.grid2{display:grid;grid-template-columns:1.3fr .7fr;gap:14px;margin-top:14px}.card h3{font-size:15px;margin:0 0 12px}.console{background:#080d18;border:1px solid #26344b;border-radius:10px;padding:12px;height:230px;overflow:auto;font:12px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;color:#b8d2ed;white-space:pre-wrap}.console .ok{color:#78e5b6}.console .warn{color:#ffd58a}.console-form{display:flex;gap:8px;margin-top:9px}.console-form input{min-width:0;flex:1;background:#0b1322;border:1px solid var(--line);border-radius:9px;padding:10px;color:var(--text)}.console-form button{white-space:nowrap}
+.item{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}.item:last-child{border:0}.tag{font-size:11px;border-radius:7px;padding:3px 7px;background:#202f49;color:#b8d0f5}.notice{margin-top:14px;border:1px solid #765322;background:#2b2114;color:#f5d8a5;border-radius:12px;padding:13px;font-size:13px}.section{display:none}.section.active{display:block}.empty{padding:28px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:12px}
+footer{color:var(--muted);font-size:11px;text-align:center;margin:22px 0 5px}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.side{display:flex;overflow:auto;gap:4px;padding:8px}.nav{white-space:nowrap;width:auto;margin:0}.side-note{display:none}.stats{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.heading h2{font-size:21px}}
+@media(max-width:430px){.app{padding:13px}.top{align-items:flex-start}.pill{font-size:10px}.server{align-items:flex-start;flex-direction:column}.stats{gap:8px}.card{padding:13px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+ <div class="brand"><div class="logo">T</div><div><h1>TOKEN HOSTING</h1><small>Independent Minecraft control panel</small></div></div>
+ <div class="pill">FREE EDITION · UI DEMO</div>
+</header>
+<div class="layout">
+ <aside class="side">
+  <button class="nav active" data-tab="overview"><span>▦</span>Overview</button>
+  <button class="nav" data-tab="console"><span>⌘</span>Console</button>
+  <button class="nav" data-tab="players"><span>♙</span>Players</button>
+  <button class="nav" data-tab="files"><span>▤</span>Files</button>
+  <button class="nav" data-tab="settings"><span>⚙</span>Settings</button>
+  <div class="side-note">Admin workspace<br>Connect a server node to enable real controls.</div>
+ </aside>
+ <main>
+  <div class="heading"><div><h2 id="pageTitle">Dashboard</h2><div class="muted">Manage your Minecraft server from one place.</div></div><span class="demo">DEMO MODE — NOT CONNECTED</span></div>
+  <section class="section active" id="overview">
+   <div class="stats">
+    <div class="card"><div class="stat-label">SERVER STATUS</div><div class="stat-value" id="statusText">Offline</div><div class="stat-sub">Simulated status only</div></div>
+    <div class="card"><div class="stat-label">PLAYERS</div><div class="stat-value">0 / 40</div><div class="stat-sub">No live player data</div></div>
+    <div class="card"><div class="stat-label">MEMORY</div><div class="stat-value">—</div><div class="stat-sub">Node not connected</div></div>
+    <div class="card"><div class="stat-label">UPTIME</div><div class="stat-value">—</div><div class="stat-sub">No process running</div></div>
+   </div>
+   <div class="card server"><div><h3>Token SMP · Survival</h3><div class="muted">Paper · Java + Bedrock planned</div><div class="status" id="statusLine"><i class="dot" style="background:#ff6b78"></i> Offline (demo)</div></div>
+    <div class="actions"><button class="btn primary" onclick="demoPower('Start')">▶ Start</button><button class="btn" onclick="demoPower('Restart')">↻ Restart</button><button class="btn danger" onclick="demoPower('Stop')">■ Stop</button></div>
+   </div>
+   <div class="grid2">
+    <div class="card"><h3>Recent activity</h3><div id="activity" class="console"><span class="ok">TOKEN HOSTING panel loaded.</span>\n<span class="warn">Demo mode: no Minecraft server is connected.</span>\nReady for backend connection.</div></div>
+    <div class="card"><h3>Quick information</h3><div class="item"><span class="muted">Server address</span><span class="tag">Not assigned</span></div><div class="item"><span class="muted">Software</span><span>Paper</span></div><div class="item"><span class="muted">Cross-play</span><span>Geyser planned</span></div><div class="item"><span class="muted">Hosting node</span><span class="tag">Not connected</span></div></div>
+   </div>
+   <div class="notice"><b>Important:</b> These buttons only demonstrate the interface. They do not start, stop, or control a real server yet. A computer or cloud server running the hosting backend is required.</div>
+  </section>
+  <section class="section" id="console"><div class="card"><h3>Server console</h3><div class="console" id="terminal"><span class="warn">[TOKEN] No server connection.</span>\nConsole commands are disabled until a backend is connected.</div><form class="console-form" onsubmit="sendDemo(event)"><input id="command" placeholder="Enter a command (demo only)" autocomplete="off"><button class="btn primary">Send</button></form></div></section>
+  <section class="section" id="players"><div class="card"><h3>Player management</h3><div class="empty">No live player list yet.<br>Connect a Minecraft server backend to manage players, whitelist and permissions.</div></div></section>
+  <section class="section" id="files"><div class="card"><h3>Server files</h3><div class="empty">File manager is not connected.<br>Worlds, plugins and configuration files will appear here after backend setup.</div></div></section>
+  <section class="section" id="settings"><div class="card"><h3>Server settings</h3><div class="item"><span>Server name</span><b>Token SMP</b></div><div class="item"><span>Server type</span><b>Paper (planned)</b></div><div class="item"><span>Maximum players</span><b>40 (planned)</b></div><div class="item"><span>Java + Bedrock</span><b>Geyser + Floodgate (planned)</b></div><div class="notice">Do not put hosting passwords, API keys or panel credentials into this static website. They must be stored securely on the server backend.</div></div></section>
+ </main>
+</div>
+<footer> TOKEN HOSTING · Free Edition · Front-end preview only · No server resources included </footer>
+</div>
+<script>
+const names={overview:"Dashboard",console:"Console",players:"Players",files:"Files",settings:"Settings"};
+document.querySelectorAll(".nav").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".nav").forEach(x=>x.classList.remove("active"));document.querySelectorAll(".section").forEach(x=>x.classList.remove("active"));b.classList.add("active");document.getElementById(b.dataset.tab).classList.add("active");document.getElementById("pageTitle").textContent=names[b.dataset.tab]}));
+function log(msg,kind=""){const a=document.getElementById("activity");a.innerHTML+="\\n"+(kind?'<span class="'+kind+'">':'')+new Date().toLocaleTimeString()+" "+msg+(kind?"</span>":"");a.scrollTop=a.scrollHeight}
+function demoPower(action){log(action+" requested — demo only. No server is connected.","warn");if(action==="Start"){document.getElementById("statusText").textContent="Demo";document.getElementById("statusLine").innerHTML='<i class="dot"></i> Start requested (demo)'}else if(action==="Stop"){document.getElementById("statusText").textContent="Offline";document.getElementById("statusLine").innerHTML='<i class="dot" style="background:#ff6b78"></i> Stop requested (demo)'}else{log("Restart requested — demo only.","warn")}}
+function sendDemo(e){e.preventDefault();const i=document.getElementById("command"),t=document.getElementById("terminal");if(!i.value.trim())return;t.innerHTML+="\\n<span>&gt; "+escapeHtml(i.value)+"</span>\\n<span class='warn'>Not sent: server backend is not connected.</span>";t.scrollTop=t.scrollHeight;i.value=""}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+</script>
+</body></html>
